@@ -11,9 +11,7 @@ response = http.get(uri)
 
 commit_json = JSON.parse(response.body)
 
-commit_sha = commit_json['sha']
-
-return commit_sha
+@commit_sha = commit_json['sha']
 
 class HomepageController
   def homepage
