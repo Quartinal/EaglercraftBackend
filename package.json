@@ -3,8 +3,5 @@
   "private": "true",
   "dependencies": {
     "sass": "^1.70.0"
-  },
-  "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/homepage.sass:./app/assets/builds/homepage.css --no-source-map --load-path=node_modules"
   }
 }
