@@ -9,7 +9,7 @@ uri = URI("https://api.github.com/repos/#{user}/#{repo}/commits/#{branch}")
 
 response = Net::HTTP.get(uri)
 
-commit_json = JSON.parse(response.body)
+commit_json = JSON.parse(response)
 
 @commit_sha = commit_json['sha']
 
