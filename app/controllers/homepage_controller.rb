@@ -13,7 +13,7 @@ commit_json = JSON.parse(response)
 
 @commit_sha = commit_json['sha']
 
-class HomepageController
+class HomepageController < ApplicationController
   def homepage
     render file: 'homepage.html'
   end
