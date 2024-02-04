@@ -5,9 +5,9 @@ user = 'Quartinal'
 repo = 'EaglercraftMC'
 branch = 'main'
 
-uri = "https://api.github.com/repos/#{user}/#{repo}/commits/#{branch}"
+uri = URI("https://api.github.com/repos/#{user}/#{repo}/commits/#{branch}")
 
-response = http.get(uri)
+response = Net::HTTP.get(uri)
 
 commit_json = JSON.parse(response.body)
 
