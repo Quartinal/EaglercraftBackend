@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-npm i -g sassc
+npm i -g sass
 
 bundle install
 ./bin/rails assets:precompile
