@@ -5,6 +5,6 @@
     "sass": "^1.70.0"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build:css": "sass ./app/assets/stylesheets/homepage.sass:./app/assets/builds/homepage.css --no-source-map --load-path=node_modules"
   }
 }
