@@ -5,5 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= @commit_sha %> - EaglercraftMC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+    <script>
+      function generateSessionId(length) {
+          const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+
+          let result = ""
+
+          for (let i = 0; i < length; i++) {
+              const randomIndex = Math.floor(Math.random() * charset.length)
+              result += charset.charAt(randomIndex)
+          }
+
+          return result
+      }
+
+      function getOS() {
+          let osInfo = ["Unknown"]
+
+          const userAgent = window.navigator.userAgent
+
+          if (userAgent.match(/Windows/i)) {
+              osInfo[0] = 'Windows'
+          } else if (userAgent.match(/Macintosh|Mac OS X|macOS/i)) {
+              osInfo[0] = 'Mac'
+          } else if (userAgent.match(/Linux/i) && !userAgent.match(/CrOS/i)) {
+              osInfo[0] = 'Linux'
+          } else if (userAgent.match(/CrOS/i)) {
+              osInfo[0] = 'ChromeOS'
+          } else {
+              osInfo[0] = 'Unknown'
+          }
+
+          return osInfo
+      }
+
+      window.onload = function() {
+          const urlParams = new URLSearchParams(window.location.search)
+
+          if (!urlParams.has('os')) {
+              const osInfo = getOS()
+              const sessionId = generateSessionId(32)
+              const queryString = "os=" + encodeURIComponent(osInfo[0]) + "&session_id=" + encodeURIComponent(sessionId)
+              window.location.href = window.location.pathname + "?" + queryString
+          }
+      }
+    </script>
   </head>
+
+  <body>
+    <div class="header">
+      <a href="/home"><h2><%= @commit_sha %></h2></a>
+
+      <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/home">About</a></li>
+        <li><a href="https://github.com/Quartinal/EaglercraftBackend">GitHub</a></li>
+      </ul>
+    </div>
+  </body>
 </html>
