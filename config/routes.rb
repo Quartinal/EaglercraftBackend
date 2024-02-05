@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get 'home', to: 'homepage#homepage'
+
+  root 'homepage#homepage'
 end
