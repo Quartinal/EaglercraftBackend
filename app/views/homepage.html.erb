@@ -75,10 +75,16 @@
 
     <script>
       $(document).ready(function() {
-        $('.header img').on("click", function(i, attr) {
-          $('.theme').attr('href', function() {
-            return attr === 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css' ? 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css' : 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css'
-          })
+        let isLightTheme = true
+
+        $('.header img').on("click", function() {
+          isLightTheme = !isLightTheme
+
+          let themeCss = isLightTheme
+            ? 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css'
+            : 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css'
+
+          $('.theme').attr('href', themeCss)
         })
       })
     </script>
