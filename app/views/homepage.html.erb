@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <link href="https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css" rel="stylesheet">
+    <link href="https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css" class="theme" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -69,6 +69,18 @@
         <li><a href="/home">About</a></li>
         <li><a href="https://github.com/Quartinal/EaglercraftBackend">GitHub</a></li>
       </ul>
+
+      <img src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg" width="35px" height="35px">
     </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.header img').on("click", function(i, attr) {
+          $('theme').attr('href', function() {
+            return attr === 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css' ? 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css' : 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css'
+          })
+        })
+      })
+    </script>
   </body>
 </html>
