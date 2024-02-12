@@ -84,7 +84,12 @@
             ? 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css'
             : 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css'
 
+          let imageSource = isLightTheme
+            ? 'https://cloakassets.quartinal.com/svg/lightbulb.dark.e2c5daa8.svg'
+            : 'https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg'
+
           $('.theme').attr('href', themeCss)
+          $('.header img').attr('src', imageSource)
         })
       })
     </script>
