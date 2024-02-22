@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css" class="theme" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
     <script>
       function generateSessionId(length) {
@@ -67,6 +71,29 @@
         <li><a href="/home">About</a></li>
         <li><a href="https://github.com/Quartinal/EaglercraftBackend">GitHub</a></li>
       </ul>
+
+      <img src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg" width="35px" height="35px">
     </div>
+
+    <script>
+      $(document).ready(function() {
+        let isLightTheme = true
+
+        $('.header img').on("click", function() {
+          isLightTheme = !isLightTheme
+
+          let themeCss = isLightTheme
+            ? 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav-light.css'
+            : 'https://cloakassets.quartinal.com/css/eaglercraftmc-nav.css'
+
+          let imageSource = isLightTheme
+            ? 'https://cloakassets.quartinal.com/svg/lightbulb.dark.e2c5daa8.svg'
+            : 'https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg'
+
+          $('.theme').attr('href', themeCss)
+          $('.header img').attr('src', imageSource)
+        })
+      })
+    </script>
   </body>
 </html>

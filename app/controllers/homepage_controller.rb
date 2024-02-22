@@ -15,6 +15,6 @@ commit_json = JSON.parse(response)
 
 class HomepageController < ActionController::Base
   def homepage
-    render file: 'homepage'
+    render template: 'homepage'
   end
 end
