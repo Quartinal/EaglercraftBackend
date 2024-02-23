@@ -72,14 +72,14 @@
         <li><a href="https://github.com/Quartinal/EaglercraftBackend">GitHub</a></li>
       </ul>
 
-      <img src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg" width="35px" height="35px">
+      <img src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg" class="bulb" width="35px" height="35px">
     </div>
 
     <script>
       $(document).ready(function() {
         let isLightTheme = true
 
-        $('.header img[src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg"]').on("click", function() {
+        $('.header img.bulb').on("click", function() {
           isLightTheme = !isLightTheme
 
           let themeCss = isLightTheme
@@ -91,7 +91,7 @@
             : 'https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg'
 
           $('.theme').attr('href', themeCss)
-          $('.header img[src="https://cloakassets.quartinal.com/svg/lightbulb.light.c9ce7cc3.svg"]').attr('src', imageSource)
+          $('.header img.bulb').attr('src', imageSource)
         })
       })
     </script>
